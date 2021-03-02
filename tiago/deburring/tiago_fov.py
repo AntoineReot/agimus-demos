@@ -48,7 +48,9 @@ class TiagoFOV:
         if urdfFilename is None:
             assert urdfString is not None
             # Pinocchio does not allow to build a GeometryModel from a XML string.
-            urdfFilename = '/tmp/tmp.urdf'
+            import os
+            urdfFilename = os.getenv('DEVEL_HPP_DIR') + \
+                           '/src/agimus-demos/tiago/deburring/tiago.urdf'
             with open(urdfFilename, 'w') as f:
                 f.write(urdfString)
         self.model, self.gmodel = pinocchio.buildModelsFromUrdf(
