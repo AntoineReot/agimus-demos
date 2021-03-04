@@ -896,7 +896,9 @@ setRobotJointBounds("planning")
 solve_tsp_problems = False
 if solve_tsp_problems:
     clusters_path = []
-    qhomes = [q0, ]
+    res,q1,err=graph.generateTargetConfig("start_arm",q0,q0)
+    assert(res)
+    qhomes = [q1, ]
     for cluster in progressbar_iterable(clusters, "Find path for each cluster"):
         paths = clusters_comp.solveTSP(armPlanner, cluster, pb_kwargs={'position': 1})
 
