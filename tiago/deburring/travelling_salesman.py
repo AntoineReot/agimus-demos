@@ -99,8 +99,9 @@ newProblem()
 client = CorbaClient(context=args.context)
 client.basic._tools.deleteAllServants()
 def wd(o):
-    from hpp.corbaserver import wrap_delete
-    return wrap_delete(o, client.basic._tools)
+    #from hpp.corbaserver import wrap_delete
+    #return wrap_delete(o, client.basic._tools)
+    return(o)
 client.manipulation.problem.selectProblem (args.context)
 
 robot = Robot("robot", "tiago", rootJointType="planar", client=client)
@@ -642,7 +643,10 @@ class ClusterComputation:
 
 class InStatePlanner:
     # Default path planner
-    parameters = {'kPRM*/numberOfNodes': Any(TC_long,2000)}
+    plannerType = "BiRRT*"
+    optimizerTypes = []
+    maxIterPathPlanning = None
+    parameters = {'kPRM*/numberOfNodes': Any(TC_long,100)}
 
     def __init__(self):
         self.plannerType = "BiRRT*"
@@ -724,6 +728,8 @@ class InStatePlanner:
             self.planner.timeOut(self.timeOutPathPlanning)
         if self.maxIterPathPlanning is None and self.timeOutPathPlanning is None:
             self.planner.stopWhenProblemIsSolved(True)
+        if self.plannerType == "BiRRT*":
+            self.planner.maxIterations(5000)
         path = wd(self.planner.solve())
         for optType in self.optimizerTypes:
             optimizer = wd(ps.hppcorba.problem.createPathOptimizer(optType, self.manipulationProblem))
@@ -758,6 +764,24 @@ class InStatePlanner:
                 print("could not time parameterize", e)
         return path
 
+
+
+    def computeMatrix(self,configs,resetRoadmapEachTime, pb_kwargs={}):
+        l = len(configs)
+        paths = [[None, ] * l for _ in range(l)]
+        distances = np.zeros((l, l))
+        from itertools import combinations
+        pbar = progressbar_object(desc="Computing distance matrix", total=l * (l - 1) / 2, **pb_kwargs)
+        for i, j in combinations(range(l), 2):
+            try:
+                path = paths[i][j] = self.computePath(configs[i], configs[j], resetRoadmap=resetRoadmapEachTime)
+                distances[j, i] = distances[i, j] = path.length()
+            except Exception as e:
+                pbar.write("Failed to connect {} to {}: {}".format(i, j, e))
+                paths[i][j] = None
+                distances[j, i] = distances[i, j] = 1e8
+            pbar.update()
+        return(paths, distances)
     ## Solve traveling salesman problem between configurations
     # \param configs list of configurations.
     #
@@ -768,19 +792,7 @@ class InStatePlanner:
     def solveTSP(self, configs, resetRoadmapEachTime, pb_kwargs={}):
         # Compute matrix of paths
         l = len(configs)
-        paths = [ [ None, ] * l for _ in range(l) ]
-        distances = np.zeros((l,l))
-        from itertools import combinations
-        pbar = progressbar_object(desc="Computing distance matrix", total=l*(l-1)/2, **pb_kwargs)
-        for i, j in combinations(range(l), 2):
-            try:
-                path = paths[i][j] = self.computePath(configs[i],configs[j],resetRoadmap=resetRoadmapEachTime)
-                distances[j,i] = distances[i,j] = path.length()
-            except Exception as e:
-                pbar.write("Failed to connect {} to {}: {}".format(i, j,e))
-                paths[i][j] = None
-                distances[j,i] = distances[i,j] = 1e8
-            pbar.update()
+        paths, distances = computeMatrix(self, configs,resetRoadmapEachTime, pb_kwargs={})
         if l > 15:
             from agimus_demos.pytsp.approximative_kopt import solve_3opt as solve_tsp
         else:
@@ -872,7 +884,7 @@ if basePlannerUsePrecomputedRoadmap:
     else:
         print("Building mobile base roadmap")
         try:
-            basePlanner.cproblem.setParameter('kPRM*/numberOfNodes', Any(TC_long,2000))
+            basePlanner.cproblem.setParameter('kPRM*/numberOfNodes', Any(TC_long,100))
             basePlanner.buildRoadmap(q0)
             #sm.margins[:,:] = 0.
             #basePlanner.cproblem.setSecurityMargins(sm.margins.tolist())
@@ -886,13 +898,12 @@ basePlanner.maxIterPathPlanning = 1000
 # 3}}}
 
 # {{{3 Find handle clusters and solve TSP for each clusters.
-clusters_comp = ClusterComputation(armPlanner.cgraph, c_lock_part)
-setRobotJointBounds("grasp-generation")
-clusters = clusters_comp.find_clusters(
-        #part_handles[:4],
-        part_handles,
-        q0, N_find_first = 40, N_find_others = 40)
-setRobotJointBounds("planning")
+find_clusters = False
+if find_clusters:
+    clusters_comp = ClusterComputation(armPlanner.cgraph, c_lock_part)
+    clusters = clusters_comp.find_clusters(part_handles, q0,
+            N_find_first = 40, N_find_others = 40)
+    #clusters = find_clusters(part_handles[:3], q0)
 solve_tsp_problems = False
 if solve_tsp_problems:
     clusters_path = []
