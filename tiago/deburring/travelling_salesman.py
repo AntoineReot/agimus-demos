@@ -98,14 +98,10 @@ loadServerPlugin (args.context, "manipulation-corba.so")
 newProblem()
 client = CorbaClient(context=args.context)
 client.basic._tools.deleteAllServants()
-def wd(o):
-    #from hpp.corbaserver import wrap_delete
-    #return wrap_delete(o, client.basic._tools)
-    return(o)
 client.manipulation.problem.selectProblem (args.context)
 
 robot = Robot("robot", "tiago", rootJointType="planar", client=client)
-crobot = wd(wd(robot.hppcorba.problem.getProblem()).robot())
+crobot = robot.hppcorba.problem.getProblem().robot()
 
 from tiago_fov import TiagoFOV, TiagoFOVGuiCallback
 from hpp import Transform
@@ -467,8 +463,8 @@ class ClusterComputation:
     #    \li camera looks at gripper
     def freeBaseConstraint(self, hi):
         ni = tool_gripper + " > " + hi + " | 0-0_pregrasp"
-        cnode = wd(self._cgraph.get(graph.nodes[ni]))
-        c = wd(cnode.configConstraint().getConfigProjector()).copy()
+        cnode = self._cgraph.get(graph.nodes[ni])
+        c = cnode.configConstraint().getConfigProjector().copy()
         c.add(self._lock_part, 0)
         return c
 
@@ -484,8 +480,8 @@ class ClusterComputation:
     #    \li camera looks at gripper
     def fixedBaseConstraint(self, hi):
         ei = tool_gripper + " > " + hi + " | 0-0_01"
-        cedge = wd(self._cgraph.get(graph.edges[ei]))
-        return wd(cedge.targetConstraint().getConfigProjector())
+        cedge = self._cgraph.get(graph.edges[ei])
+        return cedge.targetConstraint().getConfigProjector()
 
     ## Return constraint of edge between pregrasp and grasp of tool gripper
     #  \param hi handle the tool should reach
@@ -500,8 +496,8 @@ class ClusterComputation:
     #    \li camera looks at gripper
     def pregraspToGraspConstraint(self, hi):
         ei = tool_gripper + " > " + hi + " | 0-0_12"
-        cedge = wd(self._cgraph.get(graph.edges[ei]))
-        return wd(cedge.targetConstraint().getConfigProjector())
+        cedge = self._cgraph.get(graph.edges[ei])
+        return cedge.targetConstraint().getConfigProjector()
 
     ## Find a cluster of handles that contains one handle
     # \param hi handle contained in the cluster,
@@ -616,11 +612,11 @@ class ClusterComputation:
         for hi, qphi, qhi in cluster:
             # Compute grasp config
             ei = tool_gripper + " > " + hi + " | 0-0_12"
-            cedge = wd(self._cgraph.get(graph.edges[ei]))
+            cedge = self._cgraph.get(graph.edges[ei])
             p01 = cedge.getSteeringMethod().call(qphi, qhi)
             # from grasp to pregrasp
             eir = tool_gripper + " < " + hi + " | 0-0:1-{}_21".format(all_handles.index(hi))
-            cedge = wd(self._cgraph.get(graph.edges[eir]))
+            cedge = self._cgraph.get(graph.edges[eir])
             p10 = cedge.getSteeringMethod().call(qhi, qphi)
 
             grasp_paths.append((p01, p10))
@@ -654,63 +650,63 @@ class InStatePlanner:
         self.maxIterPathPlanning = None
         self.timeOutPathPlanning = None
 
-        self.manipulationProblem = wd(ps.hppcorba.problem.getProblem())
+        self.manipulationProblem = ps.hppcorba.problem.getProblem()
         self.crobot = self.manipulationProblem.robot()
         # create a new problem with the robot
-        self.cproblem = wd(ps.hppcorba.problem.createProblem(self.crobot))
+        self.cproblem = ps.hppcorba.problem.createProblem(self.crobot)
         # Set parameters
         for k, v in self.parameters.items():
             self.cproblem.setParameter(k, v)
         # Set config validation
         self.cproblem.clearConfigValidations()
         for cfgval in [ "CollisionValidation", "JointBoundValidation"]:
-            self.cproblem.addConfigValidation(wd(ps.hppcorba.problem.createConfigValidation(cfgval, self.crobot)))
+            self.cproblem.addConfigValidation(ps.hppcorba.problem.createConfigValidation(cfgval, self.crobot))
         # get reference to constraint graph
         self.cgraph = self.manipulationProblem.getConstraintGraph()
         # Add obstacles to new problem
         for obs in ps.getObstacleNames(True,False):
-            self.cproblem.addObstacle(wd(ps.hppcorba.problem.getObstacle(obs)))
+            self.cproblem.addObstacle(ps.hppcorba.problem.getObstacle(obs))
 
     def setEdge(self, edge):
         # Get constraint of edge
-        edgeLoopFree = wd(self.cgraph.get(graph.edges[edge]))
-        self.cconstraints = wd(edgeLoopFree.pathConstraint())
+        edgeLoopFree = self.cgraph.get(graph.edges[edge])
+        self.cconstraints = edgeLoopFree.pathConstraint()
         self.cproblem.setPathValidation(edgeLoopFree.getPathValidation())
         self.cproblem.setConstraints(self.cconstraints)
-        self.cproblem.setSteeringMethod(wd(edgeLoopFree.getSteeringMethod()))
+        self.cproblem.setSteeringMethod(edgeLoopFree.getSteeringMethod())
         self.cproblem.filterCollisionPairs()
 
     def setReedsAndSheppSteeringMethod(self):
-        sm = wd(ps.hppcorba.problem.createSteeringMethod("ReedsShepp", self.cproblem))
+        sm = ps.hppcorba.problem.createSteeringMethod("ReedsShepp", self.cproblem)
         self.cproblem.setSteeringMethod(sm)
         dist = ps.hppcorba.problem.createDistance("ReedsShepp", self.cproblem)
         self.cproblem.setDistance(dist)
 
     def buildRoadmap(self, qinit):
-        wd(self.cconstraints.getConfigProjector()).setRightHandSideFromConfig(qinit)
+        self.cconstraints.getConfigProjector().setRightHandSideFromConfig(qinit)
         self.cproblem.setInitConfig(qinit)
         self.cproblem.resetGoalConfigs()
-        self.roadmap = wd(ps.client.manipulation.problem.createRoadmap(
-                wd(self.cproblem.getDistance()),
-                self.crobot))
+        self.roadmap = ps.client.manipulation.problem.createRoadmap(
+                self.cproblem.getDistance(),
+                self.crobot)
         self.roadmap.constraintGraph(self.cgraph)
-        self.planner = wd(ps.hppcorba.problem.createPathPlanner(
+        self.planner = ps.hppcorba.problem.createPathPlanner(
             self.plannerType,
             self.cproblem,
-            self.roadmap))
+            self.roadmap)
         if self.maxIterPathPlanning:
             self.planner.maxIterations(self.maxIterPathPlanning)
         if self.timeOutPathPlanning:
             self.planner.timeOut(self.timeOutPathPlanning)
-        path = wd(self.planner.solve())
+        path = self.planner.solve()
         
     def createEmptyRoadmap(self):
-        self.roadmap = wd(ps.hppcorba.problem.createRoadmap(
-                wd(self.cproblem.getDistance()),
-                self.crobot))
+        self.roadmap = ps.hppcorba.problem.createRoadmap(
+                self.cproblem.getDistance(),
+                self.crobot)
         
     def computePath(self, qinit, qgoal, resetRoadmap = False):
-        wd(self.cconstraints.getConfigProjector()).setRightHandSideFromConfig(qinit)
+        self.cconstraints.getConfigProjector().setRightHandSideFromConfig(qinit)
         res, qgoal2 = self.cconstraints.apply(qgoal)
         self.cproblem.setInitConfig(qinit)
         self.cproblem.resetGoalConfigs()
@@ -718,10 +714,10 @@ class InStatePlanner:
 
         if resetRoadmap or not hasattr(self, 'roadmap'):
             self.createEmptyRoadmap()
-        self.planner = wd(ps.hppcorba.problem.createPathPlanner(
+        self.planner = ps.hppcorba.problem.createPathPlanner(
             self.plannerType,
             self.cproblem,
-            self.roadmap))
+            self.roadmap)
         if self.maxIterPathPlanning:
             self.planner.maxIterations(self.maxIterPathPlanning)
         if self.timeOutPathPlanning:
@@ -730,36 +726,34 @@ class InStatePlanner:
             self.planner.stopWhenProblemIsSolved(True)
         if self.plannerType == "BiRRT*":
             self.planner.maxIterations(5000)
-        path = wd(self.planner.solve())
+        path = self.planner.solve()
         for optType in self.optimizerTypes:
-            optimizer = wd(ps.hppcorba.problem.createPathOptimizer(optType, self.manipulationProblem))
+            optimizer = ps.hppcorba.problem.createPathOptimizer(optType, self.manipulationProblem)
             try:
                 optpath = optimizer.optimize(path)
                 # optimize can return path if it couldn't find a better one.
                 # In this case, we have too different client refering to the same servant.
                 # thus the following code deletes the old client, which triggers deletion of
                 # the servant and the new path points to nothing...
-                # path = wd(optimizer.optimize(path))
                 from hpp.corbaserver.tools import equals
                 if not equals(path, optpath):
-                    path = wd(optpath)
+                    path = optpath
             except HppError as e:
                 print("could not optimize", e)
         return path
 
     def timeParameterization(self, path):
         for optType in [ "EnforceTransitionSemantic", "SimpleTimeParameterization" ]:
-            optimizer = wd(ps.hppcorba.problem.createPathOptimizer(optType, self.manipulationProblem))
+            optimizer = ps.hppcorba.problem.createPathOptimizer(optType, self.manipulationProblem)
             try:
                 optpath = optimizer.optimize(path)
                 # optimize can return path if it couldn't find a better one.
                 # In this case, we have too different client refering to the same servant.
                 # thus the following code deletes the old client, which triggers deletion of
                 # the servant and the new path points to nothing...
-                # path = wd(optimizer.optimize(path))
                 from hpp.corbaserver.tools import equals
                 if not equals(path, optpath):
-                    path = wd(optpath)
+                    path = optpath
             except HppError as e:
                 print("could not time parameterize", e)
         return path
@@ -803,7 +797,7 @@ class InStatePlanner:
         permutation = [0,] + permutation + [0,]
         assert permutation[0] == 0, str(permutation[0]) + " should be 0"
         for i,j in zip(permutation,permutation[1:]):
-            p = paths[i][j] if i < j else wd(paths[j][i].reverse())
+            p = paths[i][j] if i < j else paths[j][i].reverse()
             solution.append(p)
         return permutation, solution
 
@@ -847,8 +841,8 @@ armPlanner.maxIterPathPlanning = 600
 armPlanner.timeOutPathPlanning = 10.
 # Set collision margin between mobile base and the rest because the collision model is not correct.
 bodies = ("tiago/torso_fixed_link_0", "tiago/base_link_0")
-cfgVal = wd(armPlanner.cproblem.getConfigValidations())
-pathVal = wd(armPlanner.cproblem.getPathValidation())
+cfgVal = armPlanner.cproblem.getConfigValidations()
+pathVal = armPlanner.cproblem.getPathValidation()
 for _, la, lb, _, _ in zip(*robot.distancesToCollision()):
     if la in bodies or lb in bodies:
         cfgVal.setSecurityMarginBetweenBodies(la, lb, 0.07)
@@ -985,7 +979,7 @@ def compute_base_path_to_cluster_init(i_cluster, qcurrent = None):
 
     # Move the head.
     # Compute config where the robot looks at the part
-    constraints = wd(armPlanner.cconstraints.getConfigProjector().copy())
+    constraints = armPlanner.cconstraints.getConfigProjector().copy()
     constraints.add(look_at_part, 0)
     constraints.setRightHandSideFromConfig(qhome)
     res, qend = constraints.apply(qhome)

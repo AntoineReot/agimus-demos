@@ -1,6 +1,6 @@
 import numpy as np
 # np.set_printoptions(threshold=np.inf, precision=2)
-from travelling_salesman import armPlanner, ClusterComputation, part_handles, q0, progressbar_iterable, wd, robot, \
+from travelling_salesman import armPlanner, ClusterComputation, part_handles, q0, progressbar_iterable, robot, \
         InStatePlanner, c_lock_part, generate_valid_config,graph, loop_free, concatenate_paths, vf, ps
 file = 'log_gtsp.txt'
 def generateConfigs(handles, Nconfigs = 3):
@@ -35,8 +35,8 @@ def generateConfigs(handles, Nconfigs = 3):
                         if not res:
                                 f.write("error {:d}th loop computing grasp for handle {}\n".format(j,hi))
                                 continue
-                        cedge = wd(clusters_comp._cgraph.get(graph.edges["move_base"]))
-                        cc = wd(cedge.targetConstraint().getConfigProjector())
+                        cedge = clusters_comp._cgraph.get(graph.edges["move_base"])
+                        cc = cedge.targetConstraint().getConfigProjector()
                         cc.setRightHandSideFromConfig(qphi)
                         res, qhome = cc.apply (qphi)
                         r=robot.rankInConfiguration["tiago/root_joint"]
