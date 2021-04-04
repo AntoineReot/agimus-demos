@@ -1,13 +1,16 @@
+from CORBA import Any, TC_long, TC_float
 import numpy as np
+import pickle, os
 # np.set_printoptions(threshold=np.inf, precision=2)
 from travelling_salesman import armPlanner, ClusterComputation, part_handles, q0, progressbar_iterable, robot, \
         InStatePlanner, c_lock_part, generate_valid_config,graph, loop_free, concatenate_paths, vf, ps
 file = 'log_gtsp.txt'
-def generateConfigs(handles, Nconfigs = 3):
+def generateConfigs(handles, Nconfigs = 3, maxIterations = 100):
         """"Generates the initial set of configurations
         In :
              handles : list of handles,
-             Nconfigs : amount of configs to look for for each handle
+             Nconfigs : maximal number of configs generated for each handle,
+             maxIteration : maximal number of iterations to create the configurations for each handle.
         Out :
              home_configs_to_handles : dictionary associating a list of tuples (qphi, qhi,qhome) to each handle
              handles_to_configs : dictionary associating a list of handles to each home pose
@@ -24,7 +27,7 @@ def generateConfigs(handles, Nconfigs = 3):
                 cpi=clusters_comp.freeBaseConstraint(hi)
                 cpi.setRightHandSideFromConfig(q0) #makes sure the object keeps the same position it had in configuration q0
                 ci = clusters_comp.pregraspToGraspConstraint(hi)
-                for j in range(Nconfigs):
+                for j in range(maxIterations):
                         #generating configs for each handle
                         res, qphi = generate_valid_config(cpi, qguesses=[q0,], NrandomConfig=10)
                         if not res:
@@ -44,6 +47,8 @@ def generateConfigs(handles, Nconfigs = 3):
                         home_configs_to_handles[tuple(qhome)]=[hi]
                         handles_to_configs[hi].append((qphi,qhi,qhome))
                         qhomes.append(qhome)
+                        if len(handles_to_configs[hi]) >= Nconfigs:
+                                break
                 nb_configs_found+=len(handles_to_configs[hi])
 
         handles_to_configs_temp = {}  #dictionary with the same format as handles_to_configs, used to store configurations temporaly before concatenating them with those from handles_to_configs
@@ -91,7 +96,18 @@ def compute_base_matrix(qhomes):
         basePlanner.setEdge("move_base")
         basePlanner.setReedsAndSheppSteeringMethod()
         basePlanner.plannerType="kPRM*"
+        basePlanner.cproblem.setParameter('kPRM*/numberOfNodes', Any(TC_long,200))
+        # if a roadmap has already been computed, read it
+        roadmapFile = os.getcwd() + "/data/roadmap-base.bin"
+        if os.path.exists(roadmapFile):
+                print("Reading mobile base roadmap:", roadmapFile)
+                basePlanner.readRoadmap(roadmapFile)
+        print("Computing matrix for the base")
         paths, distances = basePlanner.computeMatrix(qhomes,False)
+        print("done")
+        # if no roadmap has already been computed, save this one
+        if not os.path.exists(roadmapFile):
+                basePlanner.writeRoadmap(roadmapFile)
         l = len(paths)
         for i in range(l):
                 for j in range(i+1,l):
@@ -122,7 +138,8 @@ def compute_arm_matrixes(home_configs_to_handles, handles_to_configs):
                         for config in configs:
                                 if config[2]==lqhome:
                                         qs.append(config[0])
-                armpaths, armdistances = armPlanner.computeMatrix(qs,True)
+                armPlanner.createEmptyRoadmap()
+                armpaths, armdistances = armPlanner.computeMatrix(qs,False)
                 l = len(armpaths)
                 for i in range(l):
                         for j in range(i+1,l):
