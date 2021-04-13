@@ -239,7 +239,7 @@ for la, lb, en in zip(linka, linkb, enabled):
 srdf_disable_collisions += "</robot>"
 robot.client.manipulation.robot.insertRobotSRDFModelFromString("", srdf_disable_collisions)
 
-vf.loadObstacleModel ("package://gerard_bauzil/urdf/gerard_bauzil.urdf", "room")
+#vf.loadObstacleModel ("package://gerard_bauzil/urdf/gerard_bauzil.urdf", "room")
 #vf.loadObstacleModel ("package://agimus_demos/urdf/P72-table.urdf", "table")
 # Display Tiago Field of view.
 #vf.guiRequest.append( (tiago_fov.loadInGui, {'self':None}))
