@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<robot name="part"> 
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.55 0.3 0.45"/>
+      </geometry>
+      <origin xyz="0 0 0.225"/>
+      <material name="Red">
+        <color rgba="1 0.1 0.1 0.6"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.55 0.3 0.45"/>
+      </geometry>
+      <origin xyz="0 0 0.225"/>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="0.55 0.3 0.8"/>
+      </geometry>
+      <origin xyz="0 0 -0.4"/>
+      <material name="Grey">
+        <color rgba="0.8 0.8 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.55 0.3 0.8"/>
+      </geometry>
+      <origin xyz="0 0 -0.4"/>
+    </collision>
+  </link>
+</robot>

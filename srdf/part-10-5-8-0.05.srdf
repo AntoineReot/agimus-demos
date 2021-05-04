@@ -1,0 +1,1442 @@
+<robot name="part">
+<handle name="handle_0000" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0001" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0002" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0003" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0004" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0005" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0006" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0007" clearance="0.05">
+    <position xyz="-0.225 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0008" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0009" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0010" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0011" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0012" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0013" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0014" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0015" clearance="0.05">
+    <position xyz="-0.175 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0016" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0017" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0018" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0019" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0020" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0021" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0022" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0023" clearance="0.05">
+    <position xyz="-0.125 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0024" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0025" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0026" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0027" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0028" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0029" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0030" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0031" clearance="0.05">
+    <position xyz="-0.075 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0032" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0033" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0034" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0035" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0036" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0037" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0038" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0039" clearance="0.05">
+    <position xyz="-0.025 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0040" clearance="0.05">
+    <position xyz="0.025 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0041" clearance="0.05">
+    <position xyz="0.025 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0042" clearance="0.05">
+    <position xyz="0.025 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0043" clearance="0.05">
+    <position xyz="0.025 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0044" clearance="0.05">
+    <position xyz="0.025 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0045" clearance="0.05">
+    <position xyz="0.025 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0046" clearance="0.05">
+    <position xyz="0.025 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0047" clearance="0.05">
+    <position xyz="0.025 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0048" clearance="0.05">
+    <position xyz="0.075 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0049" clearance="0.05">
+    <position xyz="0.075 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0050" clearance="0.05">
+    <position xyz="0.075 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0051" clearance="0.05">
+    <position xyz="0.075 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0052" clearance="0.05">
+    <position xyz="0.075 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0053" clearance="0.05">
+    <position xyz="0.075 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0054" clearance="0.05">
+    <position xyz="0.075 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0055" clearance="0.05">
+    <position xyz="0.075 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0056" clearance="0.05">
+    <position xyz="0.125 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0057" clearance="0.05">
+    <position xyz="0.125 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0058" clearance="0.05">
+    <position xyz="0.125 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0059" clearance="0.05">
+    <position xyz="0.125 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0060" clearance="0.05">
+    <position xyz="0.125 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0061" clearance="0.05">
+    <position xyz="0.125 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0062" clearance="0.05">
+    <position xyz="0.125 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0063" clearance="0.05">
+    <position xyz="0.125 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0064" clearance="0.05">
+    <position xyz="0.175 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0065" clearance="0.05">
+    <position xyz="0.175 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0066" clearance="0.05">
+    <position xyz="0.175 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0067" clearance="0.05">
+    <position xyz="0.175 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0068" clearance="0.05">
+    <position xyz="0.175 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0069" clearance="0.05">
+    <position xyz="0.175 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0070" clearance="0.05">
+    <position xyz="0.175 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0071" clearance="0.05">
+    <position xyz="0.175 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0072" clearance="0.05">
+    <position xyz="0.225 -0.16 0.05" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0073" clearance="0.05">
+    <position xyz="0.225 -0.16 0.1" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0074" clearance="0.05">
+    <position xyz="0.225 -0.16 0.15" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0075" clearance="0.05">
+    <position xyz="0.225 -0.16 0.2" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0076" clearance="0.05">
+    <position xyz="0.225 -0.16 0.25" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0077" clearance="0.05">
+    <position xyz="0.225 -0.16 0.3" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0078" clearance="0.05">
+    <position xyz="0.225 -0.16 0.35" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0079" clearance="0.05">
+    <position xyz="0.225 -0.16 0.4" rpy="0 0 1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0080" clearance="0.05">
+    <position xyz="0.285 -0.1 0.05" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0081" clearance="0.05">
+    <position xyz="0.285 -0.1 0.1" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0082" clearance="0.05">
+    <position xyz="0.285 -0.1 0.15" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0083" clearance="0.05">
+    <position xyz="0.285 -0.1 0.2" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0084" clearance="0.05">
+    <position xyz="0.285 -0.1 0.25" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0085" clearance="0.05">
+    <position xyz="0.285 -0.1 0.3" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0086" clearance="0.05">
+    <position xyz="0.285 -0.1 0.35" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0087" clearance="0.05">
+    <position xyz="0.285 -0.1 0.4" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0088" clearance="0.05">
+    <position xyz="0.285 -0.05 0.05" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0089" clearance="0.05">
+    <position xyz="0.285 -0.05 0.1" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0090" clearance="0.05">
+    <position xyz="0.285 -0.05 0.15" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0091" clearance="0.05">
+    <position xyz="0.285 -0.05 0.2" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0092" clearance="0.05">
+    <position xyz="0.285 -0.05 0.25" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0093" clearance="0.05">
+    <position xyz="0.285 -0.05 0.3" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0094" clearance="0.05">
+    <position xyz="0.285 -0.05 0.35" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0095" clearance="0.05">
+    <position xyz="0.285 -0.05 0.4" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0096" clearance="0.05">
+    <position xyz="0.285 0.0 0.05" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0097" clearance="0.05">
+    <position xyz="0.285 0.0 0.1" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0098" clearance="0.05">
+    <position xyz="0.285 0.0 0.15" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0099" clearance="0.05">
+    <position xyz="0.285 0.0 0.2" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0100" clearance="0.05">
+    <position xyz="0.285 0.0 0.25" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0101" clearance="0.05">
+    <position xyz="0.285 0.0 0.3" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0102" clearance="0.05">
+    <position xyz="0.285 0.0 0.35" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0103" clearance="0.05">
+    <position xyz="0.285 0.0 0.4" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0104" clearance="0.05">
+    <position xyz="0.285 0.05 0.05" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0105" clearance="0.05">
+    <position xyz="0.285 0.05 0.1" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0106" clearance="0.05">
+    <position xyz="0.285 0.05 0.15" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0107" clearance="0.05">
+    <position xyz="0.285 0.05 0.2" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0108" clearance="0.05">
+    <position xyz="0.285 0.05 0.25" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0109" clearance="0.05">
+    <position xyz="0.285 0.05 0.3" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0110" clearance="0.05">
+    <position xyz="0.285 0.05 0.35" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0111" clearance="0.05">
+    <position xyz="0.285 0.05 0.4" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0112" clearance="0.05">
+    <position xyz="0.285 0.1 0.05" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0113" clearance="0.05">
+    <position xyz="0.285 0.1 0.1" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0114" clearance="0.05">
+    <position xyz="0.285 0.1 0.15" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0115" clearance="0.05">
+    <position xyz="0.285 0.1 0.2" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0116" clearance="0.05">
+    <position xyz="0.285 0.1 0.25" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0117" clearance="0.05">
+    <position xyz="0.285 0.1 0.3" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0118" clearance="0.05">
+    <position xyz="0.285 0.1 0.35" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0119" clearance="0.05">
+    <position xyz="0.285 0.1 0.4" rpy="0 0 3.14159265359"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0120" clearance="0.05">
+    <position xyz="-0.225 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0121" clearance="0.05">
+    <position xyz="-0.225 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0122" clearance="0.05">
+    <position xyz="-0.225 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0123" clearance="0.05">
+    <position xyz="-0.225 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0124" clearance="0.05">
+    <position xyz="-0.225 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0125" clearance="0.05">
+    <position xyz="-0.225 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0126" clearance="0.05">
+    <position xyz="-0.225 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0127" clearance="0.05">
+    <position xyz="-0.225 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0128" clearance="0.05">
+    <position xyz="-0.175 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0129" clearance="0.05">
+    <position xyz="-0.175 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0130" clearance="0.05">
+    <position xyz="-0.175 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0131" clearance="0.05">
+    <position xyz="-0.175 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0132" clearance="0.05">
+    <position xyz="-0.175 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0133" clearance="0.05">
+    <position xyz="-0.175 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0134" clearance="0.05">
+    <position xyz="-0.175 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0135" clearance="0.05">
+    <position xyz="-0.175 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0136" clearance="0.05">
+    <position xyz="-0.125 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0137" clearance="0.05">
+    <position xyz="-0.125 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0138" clearance="0.05">
+    <position xyz="-0.125 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0139" clearance="0.05">
+    <position xyz="-0.125 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0140" clearance="0.05">
+    <position xyz="-0.125 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0141" clearance="0.05">
+    <position xyz="-0.125 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0142" clearance="0.05">
+    <position xyz="-0.125 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0143" clearance="0.05">
+    <position xyz="-0.125 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0144" clearance="0.05">
+    <position xyz="-0.075 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0145" clearance="0.05">
+    <position xyz="-0.075 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0146" clearance="0.05">
+    <position xyz="-0.075 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0147" clearance="0.05">
+    <position xyz="-0.075 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0148" clearance="0.05">
+    <position xyz="-0.075 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0149" clearance="0.05">
+    <position xyz="-0.075 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0150" clearance="0.05">
+    <position xyz="-0.075 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0151" clearance="0.05">
+    <position xyz="-0.075 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0152" clearance="0.05">
+    <position xyz="-0.025 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0153" clearance="0.05">
+    <position xyz="-0.025 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0154" clearance="0.05">
+    <position xyz="-0.025 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0155" clearance="0.05">
+    <position xyz="-0.025 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0156" clearance="0.05">
+    <position xyz="-0.025 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0157" clearance="0.05">
+    <position xyz="-0.025 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0158" clearance="0.05">
+    <position xyz="-0.025 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0159" clearance="0.05">
+    <position xyz="-0.025 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0160" clearance="0.05">
+    <position xyz="0.025 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0161" clearance="0.05">
+    <position xyz="0.025 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0162" clearance="0.05">
+    <position xyz="0.025 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0163" clearance="0.05">
+    <position xyz="0.025 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0164" clearance="0.05">
+    <position xyz="0.025 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0165" clearance="0.05">
+    <position xyz="0.025 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0166" clearance="0.05">
+    <position xyz="0.025 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0167" clearance="0.05">
+    <position xyz="0.025 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0168" clearance="0.05">
+    <position xyz="0.075 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0169" clearance="0.05">
+    <position xyz="0.075 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0170" clearance="0.05">
+    <position xyz="0.075 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0171" clearance="0.05">
+    <position xyz="0.075 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0172" clearance="0.05">
+    <position xyz="0.075 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0173" clearance="0.05">
+    <position xyz="0.075 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0174" clearance="0.05">
+    <position xyz="0.075 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0175" clearance="0.05">
+    <position xyz="0.075 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0176" clearance="0.05">
+    <position xyz="0.125 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0177" clearance="0.05">
+    <position xyz="0.125 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0178" clearance="0.05">
+    <position xyz="0.125 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0179" clearance="0.05">
+    <position xyz="0.125 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0180" clearance="0.05">
+    <position xyz="0.125 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0181" clearance="0.05">
+    <position xyz="0.125 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0182" clearance="0.05">
+    <position xyz="0.125 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0183" clearance="0.05">
+    <position xyz="0.125 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0184" clearance="0.05">
+    <position xyz="0.175 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0185" clearance="0.05">
+    <position xyz="0.175 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0186" clearance="0.05">
+    <position xyz="0.175 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0187" clearance="0.05">
+    <position xyz="0.175 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0188" clearance="0.05">
+    <position xyz="0.175 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0189" clearance="0.05">
+    <position xyz="0.175 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0190" clearance="0.05">
+    <position xyz="0.175 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0191" clearance="0.05">
+    <position xyz="0.175 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0192" clearance="0.05">
+    <position xyz="0.225 0.16 0.05" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0193" clearance="0.05">
+    <position xyz="0.225 0.16 0.1" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0194" clearance="0.05">
+    <position xyz="0.225 0.16 0.15" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0195" clearance="0.05">
+    <position xyz="0.225 0.16 0.2" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0196" clearance="0.05">
+    <position xyz="0.225 0.16 0.25" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0197" clearance="0.05">
+    <position xyz="0.225 0.16 0.3" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0198" clearance="0.05">
+    <position xyz="0.225 0.16 0.35" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0199" clearance="0.05">
+    <position xyz="0.225 0.16 0.4" rpy="0 0 -1.57079632679"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0200" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.05" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0201" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.1" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0202" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.15" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0203" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.2" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0204" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.25" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0205" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.3" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0206" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.35" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0207" clearance="0.05">
+    <position xyz="-0.285 -0.1 0.4" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0208" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.05" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0209" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.1" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0210" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.15" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0211" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.2" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0212" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.25" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0213" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.3" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0214" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.35" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0215" clearance="0.05">
+    <position xyz="-0.285 -0.05 0.4" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0216" clearance="0.05">
+    <position xyz="-0.285 0.0 0.05" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0217" clearance="0.05">
+    <position xyz="-0.285 0.0 0.1" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0218" clearance="0.05">
+    <position xyz="-0.285 0.0 0.15" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0219" clearance="0.05">
+    <position xyz="-0.285 0.0 0.2" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0220" clearance="0.05">
+    <position xyz="-0.285 0.0 0.25" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0221" clearance="0.05">
+    <position xyz="-0.285 0.0 0.3" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0222" clearance="0.05">
+    <position xyz="-0.285 0.0 0.35" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0223" clearance="0.05">
+    <position xyz="-0.285 0.0 0.4" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0224" clearance="0.05">
+    <position xyz="-0.285 0.05 0.05" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0225" clearance="0.05">
+    <position xyz="-0.285 0.05 0.1" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0226" clearance="0.05">
+    <position xyz="-0.285 0.05 0.15" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0227" clearance="0.05">
+    <position xyz="-0.285 0.05 0.2" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0228" clearance="0.05">
+    <position xyz="-0.285 0.05 0.25" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0229" clearance="0.05">
+    <position xyz="-0.285 0.05 0.3" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0230" clearance="0.05">
+    <position xyz="-0.285 0.05 0.35" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0231" clearance="0.05">
+    <position xyz="-0.285 0.05 0.4" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0232" clearance="0.05">
+    <position xyz="-0.285 0.1 0.05" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0233" clearance="0.05">
+    <position xyz="-0.285 0.1 0.1" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0234" clearance="0.05">
+    <position xyz="-0.285 0.1 0.15" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0235" clearance="0.05">
+    <position xyz="-0.285 0.1 0.2" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0236" clearance="0.05">
+    <position xyz="-0.285 0.1 0.25" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0237" clearance="0.05">
+    <position xyz="-0.285 0.1 0.3" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0238" clearance="0.05">
+    <position xyz="-0.285 0.1 0.35" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+<handle name="handle_0239" clearance="0.05">
+    <position xyz="-0.285 0.1 0.4" rpy="0 0 0"/>
+    <link name="base_link"/>
+    <mask>1 1 1 0 1 1</mask>
+</handle>
+
+</robot>
