@@ -79,6 +79,12 @@ class PartP72:
     srdfFilename = "package://agimus_demos/srdf/P72.srdf"
     rootJointType = "freeflyer"
 
+class Part:
+    urdfFilename = \
+        "package://agimus_demos/urdf/part-15-5-8-0.05.urdf"
+    srdfFilename = "package://agimus_demos/srdf/part-15-5-8-0.05.srdf"
+    rootJointType = "freeflyer"
+
 ## Reduce joint range for security
 def shrinkJointRange (robot, ratio):
     for j in robot.jointNames:
@@ -205,7 +211,7 @@ vf = ViewerFactory(ps)
 vf.loadRobotModel (Driller, "driller")
 robot.insertRobotSRDFModel("driller", "package://gerard_bauzil/srdf/qr_drill.srdf")
 robot.setJointBounds('driller/root_joint', [-5, 5, -5, 5, 0, 2])
-vf.loadRobotModel (PartP72, "part")
+vf.loadRobotModel (Part, "part")
 robot.setJointBounds('part/root_joint', [-2, 2, -2, 2, -2, 2])
 
 srdf_disable_collisions_fmt = """  <disable_collisions link1="{}" link2="{}" reason=""/>\n"""
@@ -244,7 +250,7 @@ robot.client.manipulation.robot.insertRobotSRDFModelFromString("", srdf_disable_
 # Display Tiago Field of view.
 #vf.guiRequest.append( (tiago_fov.loadInGui, {'self':None}))
 # Display visibility cones.
-vf.addCallback(tiago_fov_gui)
+#vf.addCallback(tiago_fov_gui)
 
 try:
     v = vf.createViewer()
@@ -354,10 +360,6 @@ look_at_gripper = ps.hppcorba.problem.getConstraint("look_at_gripper")
 import hpp_idl
 look_at_gripper.setComparisonType([hpp_idl.hpp.EqualToZero,hpp_idl.hpp.EqualToZero,hpp_idl.hpp.Superior])
 
-# Create "Look at part" constraint
-ps.createPositionConstraint("look_at_part", "tiago/xtion_rgb_optical_frame", "part/to_tag_00100",
-        (0,0,0), (0,0,0), (True,True,False))
-look_at_part = ps.hppcorba.problem.getConstraint("look_at_part")
 # 3}}}
 
 # {{{3 Constraint graph instanciation
@@ -406,6 +408,9 @@ cproblem = ps.hppcorba.problem.getProblem()
 cgraph = cproblem.getConstraintGraph()
 
 graph.initialize()
+res,q0,err = graph.generateTargetConfig('move_base', q0, q0)
+assert(res)
+
 # 3}}}
 
 # {{{3 Constraint graph validation
@@ -980,7 +985,6 @@ def compute_base_path_to_cluster_init(i_cluster, qcurrent = None):
     # Move the head.
     # Compute config where the robot looks at the part
     constraints = armPlanner.cconstraints.getConfigProjector().copy()
-    constraints.add(look_at_part, 0)
     constraints.setRightHandSideFromConfig(qhome)
     res, qend = constraints.apply(qhome)
     if not res: print("failed to look at the part. It may not be visible.")
