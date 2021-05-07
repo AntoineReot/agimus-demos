@@ -730,7 +730,7 @@ class InStatePlanner:
         if self.maxIterPathPlanning is None and self.timeOutPathPlanning is None:
             self.planner.stopWhenProblemIsSolved(True)
         if self.plannerType == "BiRRT*":
-            self.planner.maxIterations(5000)
+            self.planner.maxIterations(1000)
         path = self.planner.solve()
         for optType in self.optimizerTypes:
             optimizer = ps.hppcorba.problem.createPathOptimizer(optType, self.manipulationProblem)
@@ -767,7 +767,7 @@ class InStatePlanner:
 
     def computeMatrix(self,configs,resetRoadmapEachTime, pb_kwargs={}):
         l = len(configs)
-        paths = [[None, ] * l for _ in range(l)]
+        paths = np.full((l,l), None)
         distances = np.zeros((l, l))
         from itertools import combinations
         pbar = progressbar_object(desc="Computing distance matrix", total=l * (l - 1) / 2, **pb_kwargs)
