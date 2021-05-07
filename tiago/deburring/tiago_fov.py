@@ -144,6 +144,7 @@ class TiagoFOV:
         return pinocchio.computeCollisions(self.gmodel, self.gdata, True)
 
     def clogged (self, q, robot, tagss, verbose=False):
+        return False
         def _print(*args):
             if verbose:
                 print(*args)
