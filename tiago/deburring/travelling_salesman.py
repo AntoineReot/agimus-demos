@@ -80,9 +80,20 @@ class PartP72:
     rootJointType = "freeflyer"
 
 class Part:
+    # 320
+    # urdfFilename = \
+    #     "package://agimus_demos/urdf/part-15-5-8-0.05.urdf"
+    # srdfFilename = "package://agimus_demos/srdf/part-15-5-8-0.05.srdf"
+
+    #240
     urdfFilename = \
-        "package://agimus_demos/urdf/part-15-5-8-0.05.urdf"
-    srdfFilename = "package://agimus_demos/srdf/part-15-5-8-0.05.srdf"
+        "package://agimus_demos/urdf/part-10-5-8-0.05.urdf"
+    srdfFilename = "package://agimus_demos/srdf/part-10-5-8-0.05.srdf"
+
+
+    # urdfFilename = \
+    #     "package://agimus_demos/urdf/part-10-30-15-0.05.urdf"
+    # srdfFilename = "package://agimus_demos/srdf/part-10-30-15-0.05.srdf"
     rootJointType = "freeflyer"
 
 ## Reduce joint range for security
@@ -211,7 +222,8 @@ vf = ViewerFactory(ps)
 vf.loadRobotModel (Driller, "driller")
 robot.insertRobotSRDFModel("driller", "package://gerard_bauzil/srdf/qr_drill.srdf")
 robot.setJointBounds('driller/root_joint', [-5, 5, -5, 5, 0, 2])
-vf.loadRobotModel (Part, "part")
+vf.loadRobotModel (PartP72, "part")
+#vf.loadRobotModel (Part, "part")
 robot.setJointBounds('part/root_joint', [-2, 2, -2, 2, -2, 2])
 
 srdf_disable_collisions_fmt = """  <disable_collisions link1="{}" link2="{}" reason=""/>\n"""

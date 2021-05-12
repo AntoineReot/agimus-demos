@@ -1,9 +1,14 @@
 from CORBA import Any, TC_long, TC_float
 import numpy as np
 import pickle, os
+import time
+import csv
+# np.set_printoptions(threshold=np.inf, precision=2)
 from travelling_salesman import armPlanner, ClusterComputation, part_handles, q0, progressbar_iterable, robot, \
         InStatePlanner, c_lock_part, generate_valid_config,graph, loop_free, concatenate_paths, vf, ps
-file = 'log_gtsp.txt'
+file = 'data/log_gtsp.txt'
+
+
 def generateConfigs(handles, Nconfigs = 3, maxIterations = 100):
         """"Generates the initial set of configurations
         In :
@@ -475,6 +480,7 @@ def compute_approximate_cost_matrix(nodes, qhomes, distances, home_configs_to_ha
 
 
 def generate_GLNS_file(distances, nodes, indexes, holes, precision):
+        start_time = time.time()
         distances_file = distances.copy()
         n_groups = len(holes) +1
         n_nodes = len(nodes)
@@ -498,6 +504,7 @@ def generate_GLNS_file(distances, nodes, indexes, holes, precision):
                                         else:
                                                 distances_file[i][j] = round(distances_file[i][j], precision)*10**precision
                 np.savetxt(f, distances_file,fmt='%8u')
+                #np.savetxt(f, distances,fmt='%.8f')
                 f.write('GTSP_SET_SECTION:' + '\n')
                 f.write('1 1 -1\n')
                 for i,hi in enumerate(holes):
@@ -506,7 +513,8 @@ def generate_GLNS_file(distances, nodes, indexes, holes, precision):
                                 f.write(str(x+1) + ' ')
                         f.write(str(-1) + '\n')
                 f.write('EOF')
-        return filename +'.gtsp', distances_file
+                print("--- %s seconds to generate GLNS file ---" % (time.time() - start_time))
+        return filename +'.gtsp', distances
 
 
 def get_chosen_nodes_from_GLNS(fichier):
@@ -827,7 +835,7 @@ def iterate(handles, homes_to_holes, handles_to_configs, homes_list, ponderator=
         with open('data/results.csv', mode='w') as results:
                 res_writer = csv.writer(results, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-                res_writer.writerow(['Initial approx weighted length','iterated length', 'weighted length', 'gepetto length'])
+                res_writer.writerow(['Initial approx weighted length','iterated length', 'weighted length', 'gepetto length', 'time'])
                 d_old, d_approx, d_pond, d_gep = show_approximate_tour_and_iterate(homes_list, base_paths, nodes,
                                                                                        path_nodes,
                                                                                        handles_to_configs, distancesGTSP,
@@ -840,13 +848,14 @@ def iterate(handles, homes_to_holes, handles_to_configs, homes_list, ponderator=
                 current = d_approx
                 cpt = 0
                 tries = 0
-                start_time = time.time()
-                while (current < best and tries <2) or cpt<max_iter:
-                        if current < best :
+                while (current < (best - 1e-5) or tries <2) and cpt<max_iter:
+                        print(current < best or tries <2, cpt<max_iter, tries)
+                        start_time = time.time()
+                        if current >= best :
                                 tries += 1
                         else:
                                 tries = 0
-                        f,d = generate_GLNS_file(distancesGTSP, nodes, indexes, handles, precision=3)
+                        f,d = generate_GLNS_file(distancesGTSP, nodes, indexes, handles, precision)
                         os.system("julia script.jl")
                         path_nodes = get_chosen_nodes_from_GLNS('data/tour.txt')
                         d_old, d_approxiter, d_pond, d_gep = show_approximate_tour_and_iterate(homes_list, base_paths, nodes,
@@ -855,7 +864,8 @@ def iterate(handles, homes_to_holes, handles_to_configs, homes_list, ponderator=
                                                                                         old_dists,
                                                                                         pathsGTSP, ponderator=20)
                         #print(d_old, d_approxiter, d_pond, d_gep)
-                        res_writer.writerow([d_old, d_approxiter, d_pond, d_gep])
+                        t_iter = time.time() - start_time
+                        res_writer.writerow([d_old, d_approxiter, d_pond, d_gep, t_iter])
                         current = d_approxiter
                         if d_pond < best:
                                 print("UPDATE iter " + str(cpt) + " " + str(best) + "-->" + str(d_pond))
@@ -863,7 +873,6 @@ def iterate(handles, homes_to_holes, handles_to_configs, homes_list, ponderator=
                                 best_path = path_nodes
                         cpt += 1
                         print(current, best)
-        print("--- %s seconds to iterate ---" % (time.time() - start_time))
         print(str(cpt) + " iterations")
         return(best_path, distancesGTSP, nodes, indexes, homes_list, base_paths, path_nodes, handles_to_configs, old_dists)
 
@@ -893,7 +902,7 @@ ponderator = 20)
 f,d = generate_GLNS_file(distancesGTSP, nodes, indexes, holes, precision=3)
 
 
-best_path = distancesGTSP, nodes, indexes, homes_list, base_paths, path_nodes, handles_to_configs, old_dists = iterate(holes, \
+best_path, distancesGTSP, nodes, indexes, homes_list, base_paths, path_nodes, handles_to_configs, old_dists = iterate(holes, \
 homes_to_holes, handles_to_configs, homes_list, ponderator=20)
 
 
